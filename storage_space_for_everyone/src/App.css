@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+.banner {
+  border-style: dotted;
+  border-color: red;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+.button-container {
+  border-style: dotted;
+  border-color: pink;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+.searchSpace {
+  border-style: dotted;
+  border-color: green;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+.listSpace {
+  border-style: dotted;
+  border-color: blue;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+.listSpace form {
+  display: flex;
+}
+.availableSpace {
+  border-style: dotted;
+  border-color: brown;
+  border-width: 3px;
+  margin-bottom: 4em;
+}
+
+.displayListing th {
+  border-bottom: 2px solid black;
+}
+
+.displayListing img {
+  position: relative;
+  float: left;
+  width:  100px;
+  height: 100px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

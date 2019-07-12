@@ -10,7 +10,7 @@ class ListSpace extends Component {
         city: '',
         place: '',
         zipCode: '',
-        type: 'garage',
+        storageType: 'garage',
         temp: 'yes',
         sqfeet: 0,
         price: 0
@@ -35,7 +35,7 @@ class ListSpace extends Component {
       city: this.state.newSpace.city,
       place: this.state.newSpace.place,
       zipCode: this.state.newSpace.zipCode,
-      type: this.state.newSpace.type,
+      storageType: this.state.newSpace.storagestorageType,
       temp: this.state.newSpace.temp,
       sqfeet: this.state.newSpace.sqfeet,
       price: this.state.newSpace.price,
@@ -47,7 +47,7 @@ class ListSpace extends Component {
       state.newSpace.city = ''
       state.newSpace.place = ''
       state.newSpace.zipCode = ''
-      state.newSpace.type = ''
+      state.newSpace.storageType = ''
       state.newSpace.temp = ''
       state.newSpace.sqfeet = ''
       state.newSpace.price = ''
@@ -65,8 +65,8 @@ class ListSpace extends Component {
           <input onChange={this.updateForm} type='text' name='city' value={this.state.newSpace.city} placeholder='Enter Your City'></input>
           <input onChange={this.updateForm} type='text' name='place' value={this.state.newSpace.place} placeholder='Enter Your State'></input>
           <input onChange={this.updateForm} type='text' name='zipCode' value={this.state.newSpace.zipCode} placeholder='Enter Your Zip Code'></input>
-          <select onChange={this.updateForm} name='type' value={this.state.newSpace.type}>
-            <option disabled>Please select a space type</option>
+          <select onChange={this.updateForm} name='storageType' value={this.state.newSpace.storageType}>
+            <option disabled>Please select a space storageType</option>
             <option value='garage'>Garage</option>
             <option value='basement'>Basement</option>
             <option value='room'>Room</option>

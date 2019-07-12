@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Listing (props) {
+function Listing(props) {
   return (
     <table className="displayListing">
       <thead>
@@ -18,18 +18,21 @@ function Listing (props) {
       </thead>
       <tbody>
         {
-          props.listings.map((listing,index) => {
+          props.listings.map((listing) => {
             return (
-              <tr key={index}>
+              <tr key={listing.id}>
                 <td><img src={listing.image} alt="Location View"></img></td>
                 <td>{listing.address}</td>
                 <td>{listing.city}</td>
                 <td>{listing.place}</td>
                 <td>{listing.zipCode}</td>
-                <td>{listing.type}</td>
+                <td>{listing.storageType}</td>
                 <td>{listing.temp}</td>
                 <td>{listing.sqfeet}</td>
                 <td>${listing.price}</td>
+                  <td>
+                      <button value={listing.id} onClick={event=>props.handleClick(event)}>Book</button>
+                  </td>
               </tr>
             )
           })

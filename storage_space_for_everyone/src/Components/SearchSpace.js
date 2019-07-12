@@ -1,16 +1,32 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+
 
 class SearchSpace extends Component {
   constructor(){
     super()
     this.state = {
       query: {
-        city: '',
-        place: '',
+        city: null,
+        place: null,
         sqfeet: 0,
-      }
+      },
+      redirect: false
     }
   }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/allspaces' />
+    }
+  }
+
 
   searchSpaces = event => {
     const key = event.target.name
@@ -29,22 +45,20 @@ class SearchSpace extends Component {
       sqfeet: this.state.query.sqfeet
     }
     this.props.searchListings(searchedSpace)
-    console.log(this.props.searchListings(searchedSpace))
-
     this.setState(state => {
-      state.query.city = ''
-      state.query.place = ''
-      state.query.sqfeet = ''
+      state.query.city = null
+      state.query.place = null
+      state.query.sqfeet = 0
       return state
     })
+    this.setRedirect()
   }
-
-
 
   render() {
     return(
       <div className='searchSpace'>
         <h4>Find Space</h4>
+        {this.renderRedirect()}
         <form onSubmit={this.addSearchItem}>
           <input onChange={this.searchSpaces} type='text' name='city' placeholder='Enter a City'></input>
           <input onChange={this.searchSpaces} type='text' name='place' placeholder='Enter a State'></input>

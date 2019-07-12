@@ -19,7 +19,7 @@ function BookedPlaces (props) {
     <div className="availableSpace">
       <h3>Booked Spaces</h3>
       {filterSearchDisplay() === null
-        ? <h4>Please Book a Space</h4>
+        ? <h1>Access All Your Cool Containers By Logging In!</h1>
         : <FavListing listings={filterSearchDisplay()} />
       }
     </div>

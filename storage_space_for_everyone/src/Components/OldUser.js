@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 class OldUser extends Component {
 
@@ -8,7 +9,20 @@ class OldUser extends Component {
       user: {
         username: '',
         password: '',
-      }
+      },
+      redirect: false
+    }
+  }
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/bookedspace' />
     }
   }
 
@@ -33,12 +47,15 @@ class OldUser extends Component {
       state.user.password = ''
       return state
     })
+    this.setRedirect()
+
   }
 
   render() {
     return (
-      <div>
+      <div className='return-user'>
         <h4>Returning User</h4>
+        {this.renderRedirect()}
         <form onSubmit={this.login}>
           <input onChange={this.oldUser} type='text' name='username' value={this.state.user.username} placeholder='Enter a Username'></input>
           <input onChange={this.oldUser} type='password' name='password' value={this.state.user.password} placeholder='Enter a Password'></input>

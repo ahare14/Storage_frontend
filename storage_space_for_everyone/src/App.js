@@ -122,7 +122,6 @@ class App extends Component {
       <Router>
         <div>
           <nav className='navbar'>
-            <h1><Link to="/">(Logo)</Link></h1>
             <h2><Link to="/">Home</Link></h2>
             <h2><Link to="/allspaces/">All Spaces</Link></h2>
             <h2><Link to="/findspace/">Find Space</Link></h2>

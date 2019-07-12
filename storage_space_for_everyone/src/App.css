@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap');
-
+body  {
+  background-image: url('https://media.freestocktextures.com/cache/3e/27/3e273be3fee67acdb78e3f305ac1b8d8.jpg');
+}
 .navbar {
+  background-color: white;
   display: flex;
   justify-content: space-around;
   border-style: solid;
@@ -9,11 +12,32 @@
   margin-bottom: 4em;
 }
 .banner {
+  background-color: white;
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
   border-style: dotted;
   border-color: red;
   border-width: 3px;
   margin-bottom: 4em;
 }
+.banner img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 25px;
+}
+.banner button {
+  font-size: 16px;
+  padding: 2px 2px 2px 2px;
+}
+.return-user {
+  font-size: 20px;
+  background-color: white;
+  position: relative;
+  text-align: center;
+}
+
 .button-container {
   border-style: dotted;
   border-color: pink;
@@ -21,6 +45,7 @@
   margin-bottom: 4em;
 }
 .searchSpace {
+  background-color: white;
   border-style: dotted;
   border-color: green;
   border-width: 3px;
@@ -36,6 +61,8 @@
   display: flex;
 }
 .availableSpace {
+  text-align: center;
+  background-color: white;
   border-style: dotted;
   border-color: brown;
   border-width: 3px;
@@ -43,6 +70,7 @@
 }
 
 .displayListing th {
+  text-align: center;
   border-bottom: 2px solid black;
 }
 

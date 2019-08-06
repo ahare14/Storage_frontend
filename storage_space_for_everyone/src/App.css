@@ -14,6 +14,7 @@ body  {
 .banner {
   background-color: white;
   position: relative;
+  padding-bottom: 2em;
   max-width: 500px;
   margin: auto;
   text-align: center;
@@ -22,6 +23,14 @@ body  {
   border-width: 3px;
   margin-bottom: 4em;
 }
+.hello {
+  color: #FF69B4;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 3em;
+  background-color: white;
+  text-align: center;
+}
 .banner img {
   width: 100%;
   height: auto;
@@ -29,6 +38,7 @@ body  {
 }
 .banner button {
   font-size: 16px;
+  margin: 4px;
   padding: 2px 2px 2px 2px;
 }
 .return-user {
@@ -45,22 +55,37 @@ body  {
   margin-bottom: 4em;
 }
 .searchSpace {
+  position: relative;
+  text-align: center;
+  padding-bottom: 4em;
   background-color: white;
   border-style: dotted;
   border-color: green;
   border-width: 3px;
   margin-bottom: 4em;
 }
+.searchSpace h4 {
+  font-size: 20px
+}
+.searchSpace input {
+  font-size: 20px;
+  margin: 1em;
+}
 .listSpace {
+  background-color: white;
+  position: relative;
   border-style: dotted;
   border-color: blue;
   border-width: 3px;
   margin-bottom: 4em;
 }
-.listSpace form {
-  display: flex;
+.listSpace input, h4, select {
+  position: relative;
+  text-align: center;
+  font-size: 16px;
 }
 .availableSpace {
+
   text-align: center;
   background-color: white;
   border-style: dotted;
@@ -77,9 +102,17 @@ body  {
 .displayListing img {
   position: relative;
   float: left;
-  width:  100px;
-  height: 100px;
+  width:  175px;
+  height: 175px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.return-user {
+  font-size: 20px;
+  background-color: white;
+  position: relative;
+  text-align: center;
+
 }

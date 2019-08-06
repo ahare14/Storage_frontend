@@ -12,8 +12,8 @@ class ListSpace extends Component {
         zipCode: '',
         storageType: 'garage',
         temp: 'yes',
-        sqfeet: 0,
-        price: 0
+        sqfeet: '',
+        price: ''
       }
     }
   }
@@ -35,7 +35,7 @@ class ListSpace extends Component {
       city: this.state.newSpace.city,
       place: this.state.newSpace.place,
       zipCode: this.state.newSpace.zipCode,
-      storageType: this.state.newSpace.storagestorageType,
+      storageType: this.state.newSpace.storageType,
       temp: this.state.newSpace.temp,
       sqfeet: this.state.newSpace.sqfeet,
       price: this.state.newSpace.price,
@@ -71,8 +71,8 @@ class ListSpace extends Component {
             <option value='basement'>Basement</option>
             <option value='room'>Room</option>
           </select>
-          <input type='number' name='sqfeet' placeholder='Size of Space in Sq ft'></input>
-          <input type='number' name='price' placeholder='Price per Sq ft'></input>
+          <input onChange={this.updateForm} type='number' name='sqfeet'value={this.state.newSpace.sqfeet} placeholder='Size of Space in Sq ft'></input>
+          <input onChange={this.updateForm} type='number' name='price' value={this.state.newSpace.price} placeholder='Price per Sq ft'></input>
           <select onChange={this.updateForm} name='temp' value={this.state.newSpace.temp}>
             <option disabled>Temp Controlled Y/N </option>
             <option value='yes'>Yes</option>

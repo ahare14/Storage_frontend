@@ -59,12 +59,20 @@ class App extends Component {
       state.listings = [...this.state.listings, newListing]
       return state
     })
+    fetch(apiUrlProperties, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({property: newListing})
+    }).catch(error => console.error(error.message))
     // need to put a fetch below to add listing to database
   }
 
   searchListings = (searchListing) => {
+    console.log(searchListing)
     this.setState(state => {
-      state.query = [searchListing]
+      state.query = searchListing
       return state
     })
   }
@@ -99,14 +107,6 @@ class App extends Component {
     // this.pageRefresh()
   }
 
-  // bookListing = event => {
-  //
-  // }
-
-  // pageRefresh = () => {
-  //   window.location.reload()
-  // }
-
   favListings(){
     fetch(apiUrlFavs)
       .then(response => response.json())
@@ -130,6 +130,11 @@ class App extends Component {
           </nav>
           <main>
             <Welcome />
+            {this.state.currentUser.length > 0
+              ? <h1 className='hello'>Lets Store Some Space {this.state.currentUser[0].first_name}!</h1>
+              : null
+
+            }
             <Route path='/login'
               render={props =>
               <OldUser {...props}

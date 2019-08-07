@@ -5,7 +5,7 @@ function FavListing (props) {
   const deleteListing = (event) => {
     const id = parseInt(event.target.value)
     console.log(id)
-    const deleteUrl = `http://localhost:3000/favorites/${id}`
+    const deleteUrl = `https://storage-backend-14.herokuapp.com/favorites/${id}`
     fetch(deleteUrl, {
       method: "DELETE",
       headers: {

@@ -9,9 +9,9 @@ import BookedPlaces from './Components/BookedPlaces'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css'
 
-const apiUrlUser = 'http://localhost:3000/users'
-const apiUrlProperties = 'http://localhost:3000/properties'
-const apiUrlFavs = 'http://localhost:3000/favorites'
+const apiUrlUser = 'https://storage-backend-14.herokuapp.com/users'
+const apiUrlProperties = 'https://storage-backend-14.herokuapp.com/properties'
+const apiUrlFavs = 'https://storage-backend-14.herokuapp.com/favorites'
 
 class App extends Component {
   constructor() {

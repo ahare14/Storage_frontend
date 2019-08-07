@@ -26,7 +26,7 @@ class AvailableSpace extends Component {
         property_id: property_id
       }
     }
-    fetch('http://localhost:3000/favorites',{
+    fetch('https://storage-backend-14.herokuapp.com/favorites',{
       method: "POST",
       headers: {
         "Content-Type": "application/json"

@@ -30,13 +30,13 @@ class App extends Component {
   //need a Component did mount to populate my table
 
   componentDidMount(){
-    this.getListings()
-    this.getUsers()
-    this.favListings()
+    this.getListings(apiUrlProperties)
+    this.getUsers(apiUrlUser)
+    this.favListings(apiUrlFavs)
   }
 
-  getUsers(){
-    fetch(apiUrlUser)
+  getUsers(api){
+    fetch(api)
     .then(response => response.json())
     .then(result => this.setState({
       allUsers: result
@@ -45,8 +45,8 @@ class App extends Component {
   }
 
 
-  getListings() {
-    fetch(apiUrlProperties)
+  getListings(api) {
+    fetch(api)
       .then(response => response.json())
       .then(result => this.setState({
         listings: result
@@ -66,6 +66,7 @@ class App extends Component {
       },
       body: JSON.stringify({property: newListing})
     }).catch(error => console.error(error.message))
+    .then(response => this.getListings(apiUrlProperties))
     // need to put a fetch below to add listing to database
   }
 
@@ -82,7 +83,6 @@ class App extends Component {
       state.newUser = currentUser
       return state
     })
-    console.log(JSON.stringify(currentUser))
     fetch(apiUrlUser, {
       method: "POST",
       headers: {
@@ -107,13 +107,27 @@ class App extends Component {
     // this.pageRefresh()
   }
 
-  favListings(){
-    fetch(apiUrlFavs)
+  favListings = (api) => {
+    fetch(api)
       .then(response => response.json())
       .then(result => this.setState({
         favListings: result
       }))
       .catch(error => console.log('error', error))
+  }
+
+  
+  deleteListing = (event) => {
+    const id = parseInt(event.target.value)
+    console.log(id)
+    const deleteUrl = `https://storage-backend-14.herokuapp.com/favorites/${id}`
+    fetch(deleteUrl, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).
+    then(response => this.favListings(apiUrlFavs))
   }
 
 
@@ -150,6 +164,7 @@ class App extends Component {
                 <BookedPlaces {...props}
                   favListings={this.state.favListings}
                   currentUser={this.state.currentUser}
+                  delete={this.deleteListing}
                 />
               }/>
             <Route path="/findspace/"
@@ -162,7 +177,8 @@ class App extends Component {
                 <AvailableSpace {...props}
                   listings={this.state.listings}
                   query={this.state.query}
-                  userId={this.state.currentUser}/>
+                  userId={this.state.currentUser}
+                  getFavs={this.favListings}/>
               }/>
             <Route path="/listSpace/"
               render={props =>

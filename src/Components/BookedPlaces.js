@@ -20,7 +20,7 @@ function BookedPlaces (props) {
       <h3>Booked Spaces</h3>
       {filterSearchDisplay() === null
         ? <h1>Access All Your Cool Containers By Logging In!</h1>
-        : <FavListing listings={filterSearchDisplay()} />
+        : <FavListing listings={filterSearchDisplay()} delete={props.delete} />
       }
     </div>
   )

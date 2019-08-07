@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Listing from './Listing'
 
+const apiUrlFavs = 'https://storage-backend-14.herokuapp.com/favorites'
+
 class AvailableSpace extends Component {
 
   filterSearchDisplay = () => {
@@ -33,6 +35,7 @@ class AvailableSpace extends Component {
       },
       body: JSON.stringify(apiBody)
     }).catch(error => console.error(error.message))
+    .then(response => this.props.getFavs(apiUrlFavs))
   }
 
   render() {

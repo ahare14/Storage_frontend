@@ -2,21 +2,7 @@ import React from 'react'
 
 function FavListing (props) {
 
-  const deleteListing = (event) => {
-    const id = parseInt(event.target.value)
-    console.log(id)
-    const deleteUrl = `https://storage-backend-14.herokuapp.com/favorites/${id}`
-    fetch(deleteUrl, {
-      method: "DELETE",
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-  }
-
-
   const displayInfo = props.listings.map(listing => {
-    // console.log(listing.id)
     return (
       <tr key={listing.id}>
         <td><img src={listing.property.image} alt="Location View"></img></td>
@@ -28,7 +14,7 @@ function FavListing (props) {
         <td>{listing.property.temp}</td>
         <td>{listing.property.sqfeet}</td>
         <td>${listing.property.price}</td>
-        <td><button value={listing.id} onClick={event => deleteListing(event)}>Delete</button></td>
+        <td><button value={listing.id} onClick={(event) => props.delete(event)}>Delete</button></td>
       </tr>
     )
   })
@@ -50,7 +36,6 @@ function FavListing (props) {
       </thead>
       <tbody>
         {displayInfo}
-
       </tbody>
     </table>
   )

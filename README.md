@@ -30,7 +30,7 @@ All Spaces - General list for all available storage spaces
 
 Find Space - Users Can search for a space using one of the three criterias
 
-![](src/Gifs/finspace.gif)
+![](src/Gifs/findspace.gif)
 
 List Space - If you have space, you are able to list your space to the open market
 

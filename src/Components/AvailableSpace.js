@@ -11,8 +11,8 @@ class AvailableSpace extends Component {
     } else {
       return this.props.listings.filter(listing => {
         return (
-          listing.city.includes(this.props.query[0].city)
-          || listing.place.includes(this.props.query[0].place)
+          listing.city.includes(this.props.query.city)
+          || listing.place.includes(this.props.query.place)
           // || listing.sqfeet >= parseInt(props.query[0].sqfeet)
         )
       })

@@ -7,8 +7,8 @@ class SearchSpace extends Component {
     super()
     this.state = {
       query: {
-        city: null,
-        place: null,
+        city: '',
+        place: '',
         sqfeet: 0,
       },
       redirect: false
